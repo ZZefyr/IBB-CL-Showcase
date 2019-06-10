@@ -1,0 +1,8 @@
+@mixin body-font() {
+  font-family: "museo-sans-rounded","Trebuchet MS","sans-serif";
+}
+
+@mixin heading-font() {
+  font-weight: 700;
+  font-family: 'Montserrat';
+}

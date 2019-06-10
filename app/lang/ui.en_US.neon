@@ -1,0 +1,27 @@
+#Navbar
+formats: Formats
+basicInfo: Basic information
+clState: Creative lib state
+
+#Creativelib info
+general: General
+currentVersion: Current version of scripts
+currentVersionLegacy: Current version of legacy branch of Creative lib
+file: File
+currentVersionNewLib: Current version of new branch of Creative lib
+formatName: Format name
+scriptVersion: Script version
+fileName: File name
+date: Date
+type: Type
+notes: Notes
+
+#Homepage
+principles: Principles
+usage: Usage
+externalCodes: External codes
+
+#Format detail
+preview: Preview
+specification: Specification
+

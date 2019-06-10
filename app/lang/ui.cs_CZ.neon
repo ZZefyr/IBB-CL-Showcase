@@ -1,0 +1,26 @@
+#Navbar
+formats: Formáty
+basicInfo: Základní informace
+clState: Creative lib info
+
+#Creativelib info
+general: Obecné
+currentVersion: Aktuální verze scriptů
+currentVersionLegacy: Aktuální verze původní větve Creative lib
+file: Soubor
+currentVersionNewLib: Aktuální verze nové větve Creative lib
+formatName: Název formátu
+scriptVersion: Verze scriptu
+fileName: Název souboru
+date: Datum
+type: Typ
+notes: Popis
+
+#Homepage
+principles: Zásady
+usage: Použití
+externalCodes: Externí kódy
+
+#Format detail
+preview: Ukázka
+specification: Specifikace

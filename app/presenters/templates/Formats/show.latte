@@ -1,0 +1,39 @@
+{block content}
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb mt-5">
+      <li class="breadcrumb-item"><a href="{$relativePath}#portfolio">{_ ui.formats}</a></li>
+       {if $localization ==='en'}
+          <li class="breadcrumb-item active" aria-current="page">{$formatGroupName->en_name}</li>
+          {else}
+         <li class="breadcrumb-item active" aria-current="page">{$formatGroupName->name}</li>
+      {/if}
+    </ol>
+  </nav>
+</div>
+<section class="portfolio bg-white" id="portfolio">
+    <div class="container">
+     {if $localization ==='en'}
+      <h2 class="text-center text-uppercase text-dark mb-0 mt-1">{$formatGroupName->en_name}</h2>
+       {else}
+        <h2 class="text-center text-uppercase text-dark mb-0 mt-1">{$formatGroupName->name}</h2>
+      {/if}
+      <hr class="star-dark mb-5">
+      <div class="row">
+       {foreach $formats as $format}
+        <div class="col-md-6 col-lg-4">
+          <a class="portfolio-item d-block mx-auto" n:href="Formats:detail $format->name, $format->typeId">
+            <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+              <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                <p>{$format->name}</p>
+              </div>
+            </div>
+            <img class="img-fluid img-formats" src="{$basePath}{$format->image}" alt="{$format->name}">
+          </a>
+        </div>
+     {/foreach}  
+      </div>
+    </div>
+  </section>
+
+{/block}
