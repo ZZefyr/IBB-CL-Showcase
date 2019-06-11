@@ -31,4 +31,27 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
         $this->template->localization = $this->locale; 
         
     }
+
+    protected function loginCheck()
+	{
+		 if (!$this->getUser()->isLoggedIn()) {
+			$this->redirect('LoginPage:default');
+		 }
+      }
+      
+      protected function adminCheck()
+      {
+           if ($this->getUser()->getIdentity()->user_role !=='admin') {
+               $this->flashMessage('Nemáte oprávnění vidět tuto stránku');
+               $this->redirect('Homepage:');
+               
+           }
+        }
+        
+        protected function getUserId(){
+          if ($this->getUser()->isLoggedIn()) {
+              return $this->getUser()->getIdentity()->getId();
+           }       
+        
+        }
 }
