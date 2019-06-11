@@ -1,0 +1,37 @@
+{layout "../@layoutAdmin.latte"}
+{block content}
+<!-- DataTables Example -->
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+            Formáty creative lib</div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Název</th>
+                    <th>Typ formátu</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                   <th>Název</th>
+                   <th>Typ formátu</th>
+                   <th></th>
+                  </tr>
+                </tfoot>
+                <tbody>
+             {foreach $formats as $format}
+                  <tr>
+                    <td>{$format->name}</td>
+                    <td>{$format->typename}</td>
+                    <td><a class="btn btn-primary btn-sm" href="{$format->id}">Upravit</a></td>
+                  </tr>
+             {/foreach} 
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>

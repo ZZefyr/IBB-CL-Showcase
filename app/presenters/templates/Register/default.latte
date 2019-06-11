@@ -1,0 +1,25 @@
+{layout "../@layoutAdmin.latte"}
+{block content}
+
+<form style="width:30%;" n:name=registrationForm>
+  <fieldset>
+    <h2>Registrace uživatele</h2>
+    <div class="form-group">
+      <label n:name=user_name for="user_name" >Jméno a příjmení</label>
+      <input n:name=user_name type="text" class="form-control" id="user_name">
+      </div>
+    <div class="form-group">
+      <label n:name=user_email for="user_email">E-mail</label>
+      <input n:name=user_email type="email" class="form-control" id="user_email">
+    </div>
+    <div class="form-group">
+      <label n:name=user_pw for="user_pw">Heslo</label>
+      <input n:name=user_pw type="password" class="form-control" id="user_pw">
+    </div>
+    <div class="form-group">
+      <label n:name=user_pw_check for="user_pw_check">Opakujte heslo</label>
+      <input n:name=user_pw_check type="password" class="form-control" id="user_pw_check">
+    </div>
+    </fieldset>
+    <button n:name=login type="submit" class="btn btn-primary">Registrovat</button>
+</form>
