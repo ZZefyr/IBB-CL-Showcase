@@ -1,0 +1,40 @@
+{layout "../@layoutAdmin.latte"}
+{block content}
+<!-- DataTables Example -->
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+            Aktuální verze scriptů CL</div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Název</th>
+                    <th>Verze scriptu</th>
+                    <th>Název souboru</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                   <th>Název</th>
+                   <th>Verze scriptu</th>
+                   <th>Název souboru</th>
+                   <th></th>
+                  </tr>
+                </tfoot>
+                <tbody>
+             {foreach $clVersions as $clVersion}
+                  <tr>
+                    <td>{$clVersion->name}</td>
+                    <td>{$clVersion->version}</td>
+                    <td>{$clVersion->filename}</td>
+                    <td><a class="btn btn-primary btn-sm" n:href="Admin:formatEdit $clVersion->id">Upravit záznam</a></td>
+                  </tr>
+             {/foreach} 
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
