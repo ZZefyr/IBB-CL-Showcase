@@ -17,6 +17,11 @@ return array (
       'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\forms\\SignUpFormFactory.php',
       'time' => 1537266824,
     ),
+    'App\\Model\\FormatsManager' => 
+    array (
+      'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\model\\FormatsManager.php',
+      'time' => 1560334535,
+    ),
     'App\\Model\\UserManager' => 
     array (
       'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\model\\UserManager.php',
@@ -45,12 +50,17 @@ return array (
     'App\\Presenters\\HomepagePresenter' => 
     array (
       'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\presenters\\HomepagePresenter.php',
-      'time' => 1560230893,
+      'time' => 1560316311,
     ),
     'App\\Presenters\\LoginPagePresenter' => 
     array (
       'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\presenters\\LoginPagePresenter.php',
       'time' => 1560231370,
+    ),
+    'App\\Presenters\\RegisterPresenter' => 
+    array (
+      'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\presenters\\RegisterPresenter.php',
+      'time' => 1560234935,
     ),
     'App\\Presenters\\SignPresenter' => 
     array (
@@ -65,26 +75,30 @@ return array (
     'App\\Presenters\\BasePresenter' => 
     array (
       'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\presenters\\BasePresenter.php',
-      'time' => 1560234378,
+      'time' => 1560401358,
     ),
-    'App\\Presenters\\RegisterPresenter' => 
+    'App\\Model\\ClManager' => 
     array (
-      'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\presenters\\RegisterPresenter.php',
-      'time' => 1560234935,
+      'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\model\\ClManager.php',
+      'time' => 1560409516,
     ),
     'App\\Presenters\\AdminPresenter' => 
     array (
       'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\presenters\\AdminPresenter.php',
-      'time' => 1560242271,
+      'time' => 1560409580,
     ),
   ),
   1 => 
   array (
-    'Nette\\Environment' => 12,
+    'Nette\\Environment' => 13,
     'App\\IndexModule\\Presenters\\PhpPresenter' => 1,
-    'Symfony\\Component\\Translation\\Formatter\\IntlFormatterInterface' => 4,
+    'Symfony\\Component\\Translation\\Formatter\\IntlFormatterInterface' => 22,
     'App\\Presenters\\EnformatsPresenter' => 1,
     'App\\Presenters\\LoginPresenter' => 1,
     'App\\Presenters\\Nette\\Application\\UI\\Presenter' => 3,
+    'App\\Presenters\\db' => 3,
+    'App\\Presenters\\database' => 3,
+    'App\\Model\\FormatDetailManager' => 1,
+    'App\\Presenters\\Form' => 1,
   ),
 );

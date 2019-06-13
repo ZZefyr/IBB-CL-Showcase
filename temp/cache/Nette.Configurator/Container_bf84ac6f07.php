@@ -159,8 +159,10 @@ class Container_bf84ac6f07 extends Nette\DI\Container
 			'App\Forms\FormFactory' => [1 => ['63_App_Forms_FormFactory']],
 			'App\Forms\SignInFormFactory' => [1 => ['64_App_Forms_SignInFormFactory']],
 			'App\Forms\SignUpFormFactory' => [1 => ['65_App_Forms_SignUpFormFactory']],
-			'Nette\Security\IAuthenticator' => [1 => ['66_App_Model_UserManager']],
-			'App\Model\UserManager' => [1 => ['66_App_Model_UserManager']],
+			'App\Model\ClManager' => [1 => ['66_App_Model_ClManager']],
+			'App\Model\FormatsManager' => [1 => ['67_App_Model_FormatsManager']],
+			'Nette\Security\IAuthenticator' => [1 => ['68_App_Model_UserManager']],
+			'App\Model\UserManager' => [1 => ['68_App_Model_UserManager']],
 			'App\Presenters\BasePresenter' => [
 				1 => [
 					'application.1',
@@ -323,7 +325,9 @@ class Container_bf84ac6f07 extends Nette\DI\Container
 			'63_App_Forms_FormFactory' => 'App\Forms\FormFactory',
 			'64_App_Forms_SignInFormFactory' => 'App\Forms\SignInFormFactory',
 			'65_App_Forms_SignUpFormFactory' => 'App\Forms\SignUpFormFactory',
-			'66_App_Model_UserManager' => 'App\Model\UserManager',
+			'66_App_Model_ClManager' => 'App\Model\ClManager',
+			'67_App_Model_FormatsManager' => 'App\Model\FormatsManager',
+			'68_App_Model_UserManager' => 'App\Model\UserManager',
 			'application.1' => 'App\Presenters\AdminPresenter',
 			'application.10' => 'NetteModule\MicroPresenter',
 			'application.2' => 'App\Presenters\Error4xxPresenter',
@@ -505,12 +509,26 @@ class Container_bf84ac6f07 extends Nette\DI\Container
 
 	public function createService__65_App_Forms_SignUpFormFactory(): App\Forms\SignUpFormFactory
 	{
-		$service = new App\Forms\SignUpFormFactory($this->getService('63_App_Forms_FormFactory'), $this->getService('66_App_Model_UserManager'));
+		$service = new App\Forms\SignUpFormFactory($this->getService('63_App_Forms_FormFactory'), $this->getService('68_App_Model_UserManager'));
 		return $service;
 	}
 
 
-	public function createService__66_App_Model_UserManager(): App\Model\UserManager
+	public function createService__66_App_Model_ClManager(): App\Model\ClManager
+	{
+		$service = new App\Model\ClManager($this->getService('database.default.context'));
+		return $service;
+	}
+
+
+	public function createService__67_App_Model_FormatsManager(): App\Model\FormatsManager
+	{
+		$service = new App\Model\FormatsManager($this->getService('database.default.context'));
+		return $service;
+	}
+
+
+	public function createService__68_App_Model_UserManager(): App\Model\UserManager
 	{
 		$service = new App\Model\UserManager($this->getService('database.default.context'));
 		return $service;
@@ -519,7 +537,7 @@ class Container_bf84ac6f07 extends Nette\DI\Container
 
 	public function createServiceApplication__1(): App\Presenters\AdminPresenter
 	{
-		$service = new App\Presenters\AdminPresenter($this->getService('database.default.context'));
+		$service = new App\Presenters\AdminPresenter($this->getService('67_App_Model_FormatsManager'), $this->getService('66_App_Model_ClManager'));
 		$service->injectPrimary(
 			$this,
 			$this->getService('application.presenterFactory'),
@@ -862,7 +880,7 @@ class Container_bf84ac6f07 extends Nette\DI\Container
 
 	public function createServiceSecurity__user(): Nette\Security\User
 	{
-		$service = new Nette\Security\User($this->getService('security.userStorage'), $this->getService('66_App_Model_UserManager'));
+		$service = new Nette\Security\User($this->getService('security.userStorage'), $this->getService('68_App_Model_UserManager'));
 		$this->getService('tracy.bar')->addPanel(new Nette\Bridges\SecurityTracy\UserPanel($service));
 		return $service;
 	}

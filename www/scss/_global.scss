@@ -12,6 +12,10 @@ h6 {
   @include heading-font;
 }
 
+.sidebar {
+  transition: width 1s;
+}
+
 // Custom Horizontal Rule with Star Icon
 hr.star-light,
 hr.star-dark {

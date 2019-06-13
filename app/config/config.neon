@@ -29,6 +29,8 @@ services:
 	- App\Forms\SignInFormFactory
 	- App\Forms\SignUpFormFactory
 	router: App\RouterFactory::createRouter
+	- App\Model\FormatsManager
+	- App\Model\ClManager
 
 extensions:
 	translation: Kdyby\Translation\DI\TranslationExtension

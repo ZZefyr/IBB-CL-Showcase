@@ -25,6 +25,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 
     public function beforeRender()
 	{
+        $this->template->clVersion = $this->database->table('clgeneral')->fetch();	
         $this->template->clFormats = $this->database->table('clversions');	
         $this->template->clChangelogs = $this->database->table('clchangelog')->order('id DESC');
         $this->template->relativePath ='../';  

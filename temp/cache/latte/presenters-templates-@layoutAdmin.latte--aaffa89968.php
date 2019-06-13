@@ -32,6 +32,8 @@ class Templateaaffa89968 extends Latte\Runtime\Template
   <!-- Custom styles for this template-->
   <link href="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 21 */ ?>/css/sb-admin.css" rel="stylesheet">
 
+   <script src="https://cdn.tiny.cloud/1/l78addg8xhqi1yi1w4b9cunofr9gdlxnxoahz5fpfz1gvtg5/tinymce/5/tinymce.min.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -39,29 +41,19 @@ class Templateaaffa89968 extends Latte\Runtime\Template
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
     <a class="navbar-brand mr-1" href="<?php echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Admin:")) ?>"><img style="width:200px" src="<?php
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 29 */ ?>/img/stroeerlabs_white.svg" id="header-image"></a>
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 31 */ ?>/img/stroeerlabs_white.svg" id="header-image"></a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
     </button>
 
-    <!-- Navbar Search -->
-    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
 
     <!-- Navbar -->
-    <ul class="navbar-nav ml-auto ml-md-0">
+    <ul style="margin-left: auto!important" class="navbar-nav ml-auto ml-md-0">
       <li class="nav-item dropdown no-arrow">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-user-circle fa-fw"></i>
+          <i class="fas fa-user-circle fa-fw"></i> <?php echo LR\Filters::escapeHtmlText($user->getIdentity()->user_email) /* line 42 */ ?>
+
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
           <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Odhlásit se</a>
@@ -88,10 +80,15 @@ class Templateaaffa89968 extends Latte\Runtime\Template
           <span>Formáty CL</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="charts.html">
           <i class="fas fa-fw fa-wrench"></i>
           <span>Správa CL</span></a>
+    <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <a class="dropdown-item" href="<?php echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Admin:cl")) ?>">Obecné</a>
+          <a class="dropdown-item" href="<?php echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Admin:clScriptVersions")) ?>">Aktuální verze scriptů</a>
+          <a class="dropdown-item" href="<?php echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Admin:clChangeLog")) ?>">Changelog</a>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?php echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Register:")) ?>">
@@ -161,23 +158,23 @@ class Templateaaffa89968 extends Latte\Runtime\Template
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 148 */ ?>/admin-files/jquery/jquery.min.js"></script>
-  <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 149 */ ?>/admin-files/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 144 */ ?>/admin-files/jquery/jquery.min.js"></script>
+  <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 145 */ ?>/admin-files/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 152 */ ?>/admin-files/jquery-easing/jquery.easing.min.js"></script>
+  <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 148 */ ?>/admin-files/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Page level plugin JavaScript-->
-  <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 155 */ ?>/admin-files/chart.js/Chart.min.js"></script>
-  <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 156 */ ?>/admin-files/datatables/jquery.dataTables.js"></script>
-  <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 157 */ ?>/admin-files/datatables/dataTables.bootstrap4.js"></script>
+  <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 151 */ ?>/admin-files/chart.js/Chart.min.js"></script>
+  <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 152 */ ?>/admin-files/datatables/jquery.dataTables.js"></script>
+  <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 153 */ ?>/admin-files/datatables/dataTables.bootstrap4.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 160 */ ?>/js/sb-admin.min.js"></script>
+  <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 156 */ ?>/js/sb-admin.min.js"></script>
 
   <!-- Demo scripts for this page-->
-  <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 163 */ ?>/js/demo/datatables-demo.js"></script>
-  <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 164 */ ?>/js/demo/chart-area-demo.js"></script>
+  <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 159 */ ?>/js/demo/datatables-demo.js"></script>
+  <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 160 */ ?>/js/demo/chart-area-demo.js"></script>
 
 </body>
 

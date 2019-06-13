@@ -115,10 +115,14 @@ class Template857f8e69c7 extends Latte\Runtime\Template
           </ul>
           <div class="tab-content" id="cLTabContent">
           <div class="tab-pane fade show active text-white" id="general" role="tabpanel" aria-labelledby="general-tab">
-            <p><strong><?php echo LR\Filters::escapeHtmlText(call_user_func($this->filters->translate, "ui.currentVersionLegacy")) ?>:</strong> <span style="color:red; font-weight:bold">1.02.39</span> <br>
-            <strong><?php echo LR\Filters::escapeHtmlText(call_user_func($this->filters->translate, "ui.file")) ?>:</strong> creative-lib-1.02.39.min.js</p>
-            <p><strong><?php echo LR\Filters::escapeHtmlText(call_user_func($this->filters->translate, "ui.currentVersionNewLib")) ?>:</strong> <span style="color:red; font-weight:bold">1.3.7</span> <br>
-            <strong><?php echo LR\Filters::escapeHtmlText(call_user_func($this->filters->translate, "ui.file")) ?>:</strong> creative-lib-1.3.7.js
+            <p><strong><?php echo LR\Filters::escapeHtmlText(call_user_func($this->filters->translate, "ui.currentVersionLegacy")) ?>:</strong> <span style="color:red; font-weight:bold"><?php
+		echo LR\Filters::escapeHtmlText($clVersion->oldBranchVersion) /* line 74 */ ?></span> <br>
+            <strong><?php echo LR\Filters::escapeHtmlText(call_user_func($this->filters->translate, "ui.file")) ?>:</strong> creative-lib-<?php
+		echo LR\Filters::escapeHtmlText($clVersion->oldBranchVersion) /* line 75 */ ?>.min.js</p>
+            <p><strong><?php echo LR\Filters::escapeHtmlText(call_user_func($this->filters->translate, "ui.currentVersionNewLib")) ?>:</strong> <span style="color:red; font-weight:bold"><?php
+		echo LR\Filters::escapeHtmlText($clVersion->newBranchVersion) /* line 76 */ ?></span> <br>
+            <strong><?php echo LR\Filters::escapeHtmlText(call_user_func($this->filters->translate, "ui.file")) ?>:</strong> creative-lib-<?php
+		echo LR\Filters::escapeHtmlText($clVersion->newBranchVersion) /* line 77 */ ?>.js
             </p>
            </div>
            <div class="tab-pane fade text-white" id="versions" role="tabpanel" aria-labelledby="versions-tab">
