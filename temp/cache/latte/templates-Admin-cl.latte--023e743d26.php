@@ -52,6 +52,18 @@ class Template023e743d26 extends Latte\Runtime\Template
   }
 }
    </style>
+<!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="<?php echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Admin:")) ?>">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active">
+            <a>Správa CL</a>
+          </li>
+           <li class="breadcrumb-item active">
+            <a>Obecné</a>
+          </li>
+        </ol>
 <?php
 		$form = $_form = $this->global->formsStack[] = $this->global->uiControl["editCLGeneralForm"];
 		?><form<?php
@@ -86,19 +98,6 @@ class Template023e743d26 extends Latte\Runtime\Template
 <?php
 		echo Nette\Bridges\FormsLatte\Runtime::renderFormEnd(array_pop($this->global->formsStack), false);
 ?></form>
-
-<script>
-tinymce.init({
-    selector:'textarea',
-    height: 500,
-    plugins: "advcode",
-    toolbar: "code",
-    verify_html : false,
-    verify_css_classes : true,
-    cleanup : false,
-    cleanup_on_startup : false,
-    });
-</script>
 
 <?php
 	}

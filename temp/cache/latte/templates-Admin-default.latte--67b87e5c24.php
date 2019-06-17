@@ -34,7 +34,15 @@ class Template67b87e5c24 extends Latte\Runtime\Template
 
 	function blockContent($_args)
 	{
-?><!-- Icon Cards-->
+		extract($_args);
+?>
+<!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a>Dashboard</a>
+          </li>
+        </ol>
+<!-- Icon Cards-->
         <div class="row">
           <div class="col-xl-3 col-sm-6 mb-3">
             <div class="card text-white bg-primary o-hidden h-100">
@@ -42,10 +50,10 @@ class Template67b87e5c24 extends Latte\Runtime\Template
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-comments"></i>
                 </div>
-                <div class="mr-5">26 New Messages!</div>
+                <div class="mr-5">Celkový počet formátů: <strong> <?php echo LR\Filters::escapeHtmlText($numberOfFormats) /* line 17 */ ?></strong></div>
               </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
+              <a class="card-footer text-white clearfix small z-1" href="<?php echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Admin:formats")) ?>">
+                <span class="float-left">Přejít na formáty</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
                 </span>
@@ -58,47 +66,16 @@ class Template67b87e5c24 extends Latte\Runtime\Template
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-list"></i>
                 </div>
-                <div class="mr-5">11 New Tasks!</div>
+                <div class="mr-5">Aktuální verze Creative Lib: <strong> <?php echo LR\Filters::escapeHtmlText($clVersions->newBranchVersion) /* line 33 */ ?></strong> </div>
               </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
+              <a class="card-footer text-white clearfix small z-1" href="<?php echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Admin:cl")) ?>">
+                <span class="float-left">Přejít na verze</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
                 </span>
               </a>
             </div>
           </div>
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-success o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-shopping-cart"></i>
-                </div>
-                <div class="mr-5">123 New Orders!</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-danger o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-life-ring"></i>
-                </div>
-                <div class="mr-5">13 New Tickets!</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
           </div>
         </div>
 <?php

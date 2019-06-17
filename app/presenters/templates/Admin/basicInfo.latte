@@ -1,0 +1,88 @@
+{layout "../@layoutAdmin.latte"}
+{block content}
+<!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a n:href="Admin:">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active">
+            <a>Základní informace</a>
+          </li>
+        </ol>
+<form n:name="editBasicInfoForm">
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#cz_general" role="tab" aria-controls="home" aria-selected="true">Obecné</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#en_general" role="tab" aria-controls="profile" aria-selected="false">Obecné EN</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#cz_principles" role="tab" aria-controls="contact" aria-selected="false">Zásady</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"  data-toggle="tab" href="#en_principles" role="tab" aria-controls="contact" aria-selected="false">Zásady EN</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link"  data-toggle="tab" href="#cz_usage" role="tab" aria-controls="contact" aria-selected="false">Použití</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"  data-toggle="tab" href="#en_usage" role="tab" aria-controls="contact" aria-selected="false">Použití EN</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link"  data-toggle="tab" href="#cz_externalCodes" role="tab" aria-controls="contact" aria-selected="false">Externí kódy</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"  data-toggle="tab" href="#en_externalCodes" role="tab" aria-controls="contact" aria-selected="false">Externí kódy EN</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="cz_general" role="tabpanel" aria-labelledby="home-tab">
+  <div class="form-group">
+    <div style="position:absolute" class="loader"></div>
+    <textarea n:name="general" class="form-control" id="czGeneral" rows="10"></textarea>
+  </div>
+  </div>
+  <div class="tab-pane fade" id="en_general" role="tabpanel" aria-labelledby="profile-tab">
+  <div class="form-group">
+    <textarea n:name="en_general"  class="form-control" id="enGeneral" rows="10"></textarea>
+  </div>
+</div>
+  <div class="tab-pane fade" id="cz_principles" role="tabpanel" aria-labelledby="contact-tab">
+  <div class="form-group">
+    <textarea n:name="principles" class="form-control" id="czPrinciples" rows="10"></textarea>
+  </div>
+  </div>
+  <div class="tab-pane fade" id="en_principles" role="tabpanel" aria-labelledby="contact-tab">
+  <div class="form-group">
+    <textarea n:name="en_principles"  class="form-control" id="enPrinciples" rows="10"></textarea>
+  </div>
+  </div>
+  <div class="tab-pane fade" id="cz_usage" role="tabpanel" aria-labelledby="contact-tab">
+  <div class="form-group">
+    <textarea n:name="application"  class="form-control" id="czUsage" rows="10"></textarea>
+  </div>
+  </div>
+  <div class="tab-pane fade" id="en_usage" role="tabpanel" aria-labelledby="contact-tab">
+  <div class="form-group">
+    <textarea n:name="en_application"  class="form-control" id="enUsage" rows="10"></textarea>
+  </div>
+  </div>
+  <div class="tab-pane fade" id="cz_externalCodes" role="tabpanel" aria-labelledby="contact-tab">
+  <div class="form-group">
+    <textarea n:name="externalcodes" class="form-control" id="czExternalCodes" rows="10"></textarea>
+  </div>
+  </div>
+  <div class="tab-pane fade" id="en_externalCodes" role="tabpanel" aria-labelledby="contact-tab">
+  <div class="form-group">
+    <textarea n:name="en_externalcodes" class="form-control" id="enExternalCodes" rows="10"></textarea>
+  </div>
+  </div>
+</div>
+ <button n:name="save" type="submit" class="btn btn-primary">Upravit</button>
+</form>
+
+<script>
+ drawTinyEditor();
+</script>
+{/block}

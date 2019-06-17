@@ -21,10 +21,13 @@
   <link href="{$basePath}/css/sb-admin.css" rel="stylesheet">
 
    <script src="https://cdn.tiny.cloud/1/l78addg8xhqi1yi1w4b9cunofr9gdlxnxoahz5fpfz1gvtg5/tinymce/5/tinymce.min.js"></script>
+     <!-- Custom scripts for all pages-->
+  <script src="{$basePath}/js/sb-admin-form.js"></script>
 
 </head>
 
 <body id="page-top">
+<div n:foreach="$flashes as $flash" n:class="alert, flash, $flash->type">{$flash->message}</div>
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
@@ -53,19 +56,25 @@
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-      <li class="nav-item active">
+      <li id="dashboard" class="nav-item">
         <a class="nav-link" n:href="Admin:">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" n:href="Admin:Formats" id="pagesDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+      <li id="basic-info"  class="nav-item">
+        <a class="nav-link" n:href="Admin:BasicInfo" role="button" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-info"></i>
+          <span>Základní informace</span>
+        </a>
+      </li>
+      <li id="formats"  class="nav-item">
+        <a class="nav-link" n:href="Admin:Formats" role="button" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-fw fa-folder"></i>
           <span>Formáty CL</span>
         </a>
       </li>
-      <li class="nav-item dropdown">
+      <li id="cl" class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="charts.html">
           <i class="fas fa-fw fa-wrench"></i>
           <span>Správa CL</span></a>
@@ -75,7 +84,7 @@
           <a class="dropdown-item" n:href="Admin:clChangeLog">Changelog</a>
         </div>
       </li>
-      <li class="nav-item">
+      <li id="register" class="nav-item">
         <a class="nav-link"  n:href="Register:">
           <i class="fas fa-fw fa-user"></i>
           <span>Registrace</span></a>
@@ -85,17 +94,6 @@
     <div id="content-wrapper">
 
       <div class="container-fluid">
-
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a n:href="Admin:">Dashboard</a>
-          </li>
-          <li class="breadcrumb-item active">Overview</li>
-        </ol>
-
-    
-
       {include content}
 
       </div>
@@ -133,8 +131,8 @@
         </div>
         <div class="modal-body">Kliknutím na tlačítko Odhlásit níže, se odhlásíte z administrace</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
           <a class="btn btn-primary" n:href="LoginPage:out">Odhlásit</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
         </div>
       </div>
     </div>
@@ -148,16 +146,16 @@
   <script src="{$basePath}/admin-files/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Page level plugin JavaScript-->
-  <script src="{$basePath}/admin-files/chart.js/Chart.min.js"></script>
   <script src="{$basePath}/admin-files/datatables/jquery.dataTables.js"></script>
   <script src="{$basePath}/admin-files/datatables/dataTables.bootstrap4.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="{$basePath}/js/sb-admin.min.js"></script>
+  <script defer src="{$basePath}/admin-files/nette/nette.ajax.js"></script>
+  <script defer src="{$basePath}/js/sb-admin.js"></script>
+
 
   <!-- Demo scripts for this page-->
   <script src="{$basePath}/js/demo/datatables-demo.js"></script>
-  <script src="{$basePath}/js/demo/chart-area-demo.js"></script>
 
 </body>
 

@@ -36,22 +36,18 @@ class Template132a65cfe9 extends Latte\Runtime\Template
 	{
 		extract($_args);
 ?>
-   <style>
-   .loader {
-  border: 3px solid hsla(185, 100%, 62%, 0.2);
-  border-top-color: #3cefff;
-  border-radius: 50%;
-  width: 3em;
-  height: 3em;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-   </style>
+   <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="<?php echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Admin:")) ?>">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="<?php echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Admin:Formats")) ?>">Formáty</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a><?php echo LR\Filters::escapeHtmlText($formatValue->name) /* line 12 */ ?></a>
+          </li>
+        </ol>
 <?php
 		$form = $_form = $this->global->formsStack[] = $this->global->uiControl["editForm"];
 		?><form<?php
@@ -148,17 +144,9 @@ class Template132a65cfe9 extends Latte\Runtime\Template
 ?></form>
 
 <script>
-tinymce.init({
-    selector:'textarea',
-    height: 500,
-    plugins: "advcode",
-    toolbar: "code",
-    verify_html : false,
-    verify_css_classes : true,
-    cleanup : false,
-    cleanup_on_startup : false,
-    });
+ drawTinyEditor();
 </script>
+
 
 <?php
 	}

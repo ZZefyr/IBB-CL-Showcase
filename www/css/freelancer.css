@@ -18,6 +18,11 @@ h6 {
   font-family: 'Montserrat';
 }
 
+.sidebar {
+  -webkit-transition: width 1s;
+  transition: width 1s;
+}
+
 hr.star-light,
 hr.star-dark {
   max-width: 15rem;
@@ -119,6 +124,30 @@ thead {
 
 tbody tr:hover {
   color: #FF5B10;
+}
+
+.loader {
+  border: 3px solid rgba(61, 239, 255, 0.2);
+  border-top-color: #3cefff;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 #mainNav {

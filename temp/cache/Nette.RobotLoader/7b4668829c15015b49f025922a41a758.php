@@ -17,10 +17,15 @@ return array (
       'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\forms\\SignUpFormFactory.php',
       'time' => 1537266824,
     ),
+    'App\\Model\\ClManager' => 
+    array (
+      'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\model\\ClManager.php',
+      'time' => 1560495880,
+    ),
     'App\\Model\\FormatsManager' => 
     array (
       'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\model\\FormatsManager.php',
-      'time' => 1560334535,
+      'time' => 1560497198,
     ),
     'App\\Model\\UserManager' => 
     array (
@@ -31,6 +36,11 @@ return array (
     array (
       'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\model\\UserManager.php',
       'time' => 1560232666,
+    ),
+    'App\\Presenters\\BasePresenter' => 
+    array (
+      'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\presenters\\BasePresenter.php',
+      'time' => 1560401358,
     ),
     'App\\Presenters\\Error4xxPresenter' => 
     array (
@@ -50,7 +60,7 @@ return array (
     'App\\Presenters\\HomepagePresenter' => 
     array (
       'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\presenters\\HomepagePresenter.php',
-      'time' => 1560316311,
+      'time' => 1560767345,
     ),
     'App\\Presenters\\LoginPagePresenter' => 
     array (
@@ -72,27 +82,22 @@ return array (
       'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\router\\RouterFactory.php',
       'time' => 1560141454,
     ),
-    'App\\Presenters\\BasePresenter' => 
+    'App\\Model\\BaseManager' => 
     array (
-      'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\presenters\\BasePresenter.php',
-      'time' => 1560401358,
-    ),
-    'App\\Model\\ClManager' => 
-    array (
-      'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\model\\ClManager.php',
-      'time' => 1560409516,
+      'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\model\\BaseManager.php',
+      'time' => 1560780516,
     ),
     'App\\Presenters\\AdminPresenter' => 
     array (
       'file' => 'C:\\xampp2\\htdocs\\ibbCreativeLibraryVol2\\app\\presenters\\AdminPresenter.php',
-      'time' => 1560409580,
+      'time' => 1560780552,
     ),
   ),
   1 => 
   array (
-    'Nette\\Environment' => 13,
+    'Nette\\Environment' => 15,
     'App\\IndexModule\\Presenters\\PhpPresenter' => 1,
-    'Symfony\\Component\\Translation\\Formatter\\IntlFormatterInterface' => 22,
+    'Symfony\\Component\\Translation\\Formatter\\IntlFormatterInterface' => 23,
     'App\\Presenters\\EnformatsPresenter' => 1,
     'App\\Presenters\\LoginPresenter' => 1,
     'App\\Presenters\\Nette\\Application\\UI\\Presenter' => 3,
@@ -100,5 +105,6 @@ return array (
     'App\\Presenters\\database' => 3,
     'App\\Model\\FormatDetailManager' => 1,
     'App\\Presenters\\Form' => 1,
+    'App\\Presenters\\BootstrapFrom' => 2,
   ),
 );

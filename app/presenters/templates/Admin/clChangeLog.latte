@@ -1,5 +1,17 @@
 {layout "../@layoutAdmin.latte"}
 {block content}
+<!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a n:href="Admin:">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active">
+            <a>Správa CL</a>
+          </li>
+          <li class="breadcrumb-item active">
+            <a>Changelog</a>
+          </li>
+        </ol>
 <!-- DataTables Example -->
         <div class="card mb-3">
           <div class="card-header">
@@ -30,7 +42,7 @@
                     <td>{$clChangeLog->date}</td>
                     <td>{$clChangeLog->type}</td>
                     <td>{$clChangeLog->notes}</td>
-                    <td><a class="btn btn-primary btn-sm" n:href="Admin:formatEdit $clChangeLog->id">Upravit záznam</a></td>
+                    <td><a class="ajax btn btn-primary btn-sm" n:href="getChangelogData! $clChangeLog->id">Upravit záznam</a></td>
                   </tr>
              {/foreach} 
                 </tbody>
@@ -38,3 +50,25 @@
             </div>
           </div>
         </div>
+{snippet editChangeLogForm} 
+<form id="editClVersionForm" n:name=editChangeLogForm>
+  <div class="form-group">
+    <label for="date"><strong>Datum:</strong></label>
+    <input n:name=id value="{ifset $formatValue}{$formatValue->id}{/ifset}" type="hidden" class="form-control" id="format_id">
+    <input n:name=date value="{ifset $formatValue}{$formatValue->date}{/ifset}" type="text" class="form-control" id="date">
+  </div>
+  <div class="form-group">
+    <label for="type"><strong>Typ: </strong></label>
+    <input n:name=type value="{ifset $formatValue}{$formatValue->type}{/ifset}" type="text" class="form-control" id="type">
+  </div>
+   <div class="form-group">
+    <label for="notes"><strong>Popis: </strong></label>
+    <input n:name=notes value="{ifset $formatValue}{$formatValue->notes}{/ifset}" type="text" class="form-control" id="notes">
+  </div>
+ <button n:name=save type="submit" class="btn btn-primary">Upravit</button>
+  <button onclick="hideWebDialog('editClVersionForm')" type="button" class="btn btn-secondary">Storno</button>
+</form>
+{ifset $formatValue}
+<script>showWebDialog('editClVersionForm');</script>
+{/ifset}
+{/snippet} 

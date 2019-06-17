@@ -59,6 +59,32 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
 
+#editClVersionForm {
+  display:none;
+  position:fixed; 
+  box-sizing: border-box; 
+  padding:1rem; 
+  background-color:white; 
+  width: 350px; 
+  height: 350px; 
+  left: 0; 
+  right:0; 
+  top:20%; 
+  margin-left: auto; 
+  margin-right: auto;
+  z-index:9
+}
+
+#elementBackground{
+  position:fixed;
+  background-color: rgba(128, 128, 128, 0.67);
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-attachment:fixed;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -10913,4 +10939,27 @@ body.sidebar-toggled footer.sticky-footer {
   body.sidebar-toggled footer.sticky-footer {
     width: calc(100% - 90px);
   }
+}
+.loader {
+  border: 3px solid hsla(185, 100%, 62%, 0.2);
+  border-top-color: #3cefff;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  animation: spin 1s linear infinite;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  margin: auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+textarea {
+  display:none!important;
 }

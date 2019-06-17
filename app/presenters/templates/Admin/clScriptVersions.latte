@@ -1,5 +1,17 @@
 {layout "../@layoutAdmin.latte"}
 {block content}
+<!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a n:href="Admin:">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active">
+            <a>Správa CL</a>
+          </li>
+           <li class="breadcrumb-item active">
+            <a>Aktuální verze scriptů</a>
+          </li>
+        </ol>
 <!-- DataTables Example -->
         <div class="card mb-3">
           <div class="card-header">
@@ -30,7 +42,7 @@
                     <td>{$clVersion->name}</td>
                     <td>{$clVersion->version}</td>
                     <td>{$clVersion->filename}</td>
-                    <td><a class="btn btn-primary btn-sm" n:href="Admin:formatEdit $clVersion->id">Upravit záznam</a></td>
+                    <td><a n:href="getFormatData! $clVersion->id" class="ajax btn btn-primary btn-sm">Upravit záznam</a></td>
                   </tr>
              {/foreach} 
                 </tbody>
@@ -38,3 +50,26 @@
             </div>
           </div>
         </div>
+{snippet editClVersionForm} 
+<form id="editClVersionForm" n:name=editClVersionForm>
+  <div class="form-group">
+    <label for="format_id"><strong>Název formátu</strong></label>
+    <input n:name=format_id value="{ifset $formatValue}{$formatValue->id}{/ifset}" type="hidden" class="form-control" id="format_id">
+    <input n:name=format_name value="{ifset $formatValue}{$formatValue->name}{/ifset}" type="text" class="form-control" id="format_name">
+  </div>
+  <div class="form-group">
+    <label for="format_version"><strong>Verze formátu: </strong></label>
+    <input n:name=format_version value="{ifset $formatValue}{$formatValue->version}{/ifset}" type="text" class="form-control" id="format_version">
+  </div>
+   <div class="form-group">
+    <label for="format_filename"><strong>Název souboru: </strong></label>
+    <input n:name=format_filename value="{ifset $formatValue}{$formatValue->filename}{/ifset}" type="text" class="form-control" id="format_filename">
+  </div>
+ <button n:name=save type="submit" class="btn btn-primary">Upravit</button>
+  <button onclick="hideWebDialog('editClVersionForm')" type="button" class="btn btn-secondary">Storno</button>
+</form>
+{ifset $formatValue}
+<script>showWebDialog('editClVersionForm');</script>
+{/ifset}
+{/snippet} 
+{/block}

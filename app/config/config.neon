@@ -31,6 +31,7 @@ services:
 	router: App\RouterFactory::createRouter
 	- App\Model\FormatsManager
 	- App\Model\ClManager
+	- App\Model\BaseManager
 
 extensions:
 	translation: Kdyby\Translation\DI\TranslationExtension

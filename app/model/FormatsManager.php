@@ -11,6 +11,9 @@ class FormatsManager {
         $this->database = $database;
     }
 
+    public function getNumberOfFormats() {
+        return $this->database->table('formats')->count('*');
+    }
     public function getFormatTypes() {
         return $this->database->table('formatsType');
     }

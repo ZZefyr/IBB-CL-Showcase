@@ -16,6 +16,18 @@
   }
 }
    </style>
+<!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a n:href="Admin:">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active">
+            <a>Správa CL</a>
+          </li>
+           <li class="breadcrumb-item active">
+            <a>Obecné</a>
+          </li>
+        </ol>
 <form n:name=editCLGeneralForm>
   <div class="form-group">
     <label for="old_version"><strong>Aktuální verze původní větve Creative lib</strong></label>
@@ -27,18 +39,5 @@
   </div>
  <button n:name=save type="submit" class="btn btn-primary">Upravit</button>
 </form>
-
-<script>
-tinymce.init({
-    selector:'textarea',
-    height: 500,
-    plugins: "advcode",
-    toolbar: "code",
-    verify_html : false,
-    verify_css_classes : true,
-    cleanup : false,
-    cleanup_on_startup : false,
-    });
-</script>
 
 {/block}

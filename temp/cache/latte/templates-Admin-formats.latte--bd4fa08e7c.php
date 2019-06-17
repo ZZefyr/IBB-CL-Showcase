@@ -26,7 +26,7 @@ class Templatebd4fa08e7c extends Latte\Runtime\Template
 	function prepare()
 	{
 		extract($this->params);
-		if (isset($this->params['format'])) trigger_error('Variable $format overwritten in foreach on line 26');
+		if (isset($this->params['format'])) trigger_error('Variable $format overwritten in foreach on line 36');
 		$this->parentName = "../@layoutAdmin.latte";
 		Nette\Bridges\ApplicationLatte\UIRuntime::initialize($this, $this->parentName, $this->blocks);
 		
@@ -37,6 +37,16 @@ class Templatebd4fa08e7c extends Latte\Runtime\Template
 	{
 		extract($_args);
 ?>
+ <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="<?php echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Admin:")) ?>">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active">
+            <a>Formáty</a>
+          </li>
+        </ol>
+
 <!-- DataTables Example -->
         <div class="card mb-3">
           <div class="card-header">
@@ -65,8 +75,8 @@ class Templatebd4fa08e7c extends Latte\Runtime\Template
 		foreach ($formats as $format) {
 ?>
                   <tr>
-                    <td><?php echo LR\Filters::escapeHtmlText($format->name) /* line 28 */ ?></td>
-                    <td><?php echo LR\Filters::escapeHtmlText($format->typename) /* line 29 */ ?></td>
+                    <td><?php echo LR\Filters::escapeHtmlText($format->name) /* line 38 */ ?></td>
+                    <td><?php echo LR\Filters::escapeHtmlText($format->typename) /* line 39 */ ?></td>
                     <td><a class="btn btn-primary btn-sm" href="<?php echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Admin:formatEdit", [$format->id])) ?>">Upravit</a></td>
                   </tr>
 <?php
