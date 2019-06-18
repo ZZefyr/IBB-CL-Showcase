@@ -59,7 +59,9 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
 
-#editClVersionForm {
+#editClVersionForm, 
+#addClVersionForm,
+#addChangeLogForm {
   display:none;
   position:fixed; 
   box-sizing: border-box; 
@@ -10962,4 +10964,30 @@ body.sidebar-toggled footer.sticky-footer {
 
 textarea {
   display:none!important;
+}
+
+.add-button {
+  position:fixed;
+  bottom: 5px;
+  right: 5px;
+  background-color: #007bff;
+  border-radius:50px;
+  content: '+';
+  width: 4rem;
+  height: 4rem;
+  z-index: 10;
+  cursor:pointer;
+  color: white;
+  font-size: 36px;
+  text-align: center;
+}
+
+.scroll-to-top{
+  visibility: hidden;
+}
+
+.add-button:hover {
+text-decoration:none;
+background-color:  rgba(0, 123, 255, 0.38);
+color:#007bff;
 }

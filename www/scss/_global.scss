@@ -132,3 +132,32 @@ tbody tr:hover {
     transform: rotate(360deg);
   }
 }
+
+.languages {
+  color:white;
+  position:absolute;
+  right: 1rem;
+  a {
+    color: white;
+  }
+  a.active {
+      color: #ff5b10;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+@media(max-width: 1300px) {
+  .languages {
+    left: 1rem;
+    top: 1rem;
+    right: unset;
+}
+}
+
+@media(max-width: 1300px) {
+  .languages {
+    top: .2rem;
+}
+}

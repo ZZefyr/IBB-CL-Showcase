@@ -72,4 +72,14 @@
     });
   });
 
+  $(function() {
+   var url = location.href;
+   if(url.indexOf('en')> -1){
+     $('.en').addClass(" active");
+   }
+   else {
+    $('.cz').addClass(" active");
+   }
+  });
+
 })(jQuery); // End of use strict

@@ -69,3 +69,12 @@ $(function(){
     }, 2000);  
   }
 });
+
+
+  $('a[data-target="#deleteModal"]').click(function () {
+    var data_delete_id = '';
+    if (typeof $(this).data('id') !== 'undefined') {
+      data_delete_id = $(this).data('id');
+    }
+    $('#dataDeleteId').val(data_delete_id);
+  })
